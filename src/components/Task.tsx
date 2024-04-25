@@ -5,8 +5,21 @@ import { Container, Paper, Button } from '@mui/material';
 
 export default function Task() {
     const paperStyle = { padding: "30px 20px", maxWidth: 600, margin: "50px auto", }
-    const [name, setName] = useState('')
+    const [title, setTitle] = useState('')
     const [url, setUrl] = useState('')
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const task = {title, url}
+        console.log(task)
+        fetch("http://localhost:8080/task/add",{
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify(task)
+        }).then(() => {
+            console.log("New Task Added")
+        })
+    }
     return (
         <Container>
             <Paper elevation={3} style={paperStyle}>
@@ -18,16 +31,17 @@ export default function Task() {
                     }}
                     noValidate
                     autoComplete="off"
+                    onSubmit={handleSubmit}
                 >
-                    <TextField id="outlined-basic" label="Task Name" variant="outlined"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                    <TextField id="outlined-basic" label="Task Title" variant="outlined"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
                     />
                     <TextField id="outlined-basic2" label="Task URL" variant="outlined"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                     />
-                    <Button variant="contained">Add Task</Button>
+                    <Button variant="contained" type='submit'>Submit</Button>
                 </Box>
             </Paper>
         </Container>
