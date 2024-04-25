@@ -3,6 +3,9 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Container, Paper, Button, Link } from '@mui/material';
 import { Todo } from "../../types/todo"
+import { red } from '@mui/material/colors';
+
+const buttonColor = red[600];
 
 export default function Task() {
     const paperStyle = { padding: "30px 20px", maxWidth: 600, margin: "50px auto", }
@@ -51,14 +54,14 @@ export default function Task() {
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                     />
-                    <Button variant="contained" type='submit'>Submit</Button>
+                    <Button variant="contained" type='submit' style={{ backgroundColor: buttonColor }}>Submit</Button>
                 </Box>
             </Paper>
             <Paper elevation={3} style={paperStyle}>
                 <h2 style={{ color: "#1976d2" }}>Tasks</h2>
                 {tasks.map((task,index) => (
-                    <Paper elevation={6} style={{margin:"10px",padding:"15px",textAlign:"left"}} key={index}>
-                        {task.id} : <Link href={task.url} target="_blank">{task.title}</Link>
+                    <Paper elevation={3} style={{margin:"10px",padding:"15px",textAlign:"left"}} key={index}>
+                        {task.id} <Link href={task.url} target="_blank">{task.title}</Link>
                     </Paper>
                 ))}
 
