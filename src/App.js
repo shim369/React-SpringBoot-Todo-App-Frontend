@@ -1,10 +1,12 @@
 import './App.css';
-import ButtonAppBar from "./components/ButtonAppBar.js"
+import AppBarNav from "./components/AppBarNav.js"
+import Task from "./components/Task.js"
 
 function App() {
   return (
     <div className="App">
-      <ButtonAppBar />
+      <AppBarNav />
+      <Task />
     </div>
   );
 }
