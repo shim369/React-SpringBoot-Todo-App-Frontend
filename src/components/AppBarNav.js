@@ -21,7 +21,7 @@ export default function AppBarNav() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            React SpringBoot App
+            React SpringBoot Todo App
           </Typography>
         </Toolbar>
       </AppBar>
