@@ -33,7 +33,7 @@ export default function Task() {
     return (
         <Container>
             <Paper elevation={3} style={paperStyle}>
-                <h1 style={{ color: "#1976d2" }}>Add Task</h1>
+                <h2 style={{ color: "#1976d2" }}>Add Task</h2>
                 <Box
                     component="form"
                     sx={{
@@ -55,7 +55,7 @@ export default function Task() {
                 </Box>
             </Paper>
             <Paper elevation={3} style={paperStyle}>
-                <h1>Tasks</h1>
+                <h2 style={{ color: "#1976d2" }}>Tasks</h2>
                 {tasks.map((task,index) => (
                     <Paper elevation={6} style={{margin:"10px",padding:"15px",textAlign:"left"}} key={index}>
                         {task.id} : <Link href={task.url} target="_blank">{task.title}</Link>

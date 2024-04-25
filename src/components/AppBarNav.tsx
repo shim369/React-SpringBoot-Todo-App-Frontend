@@ -9,7 +9,7 @@ export default function AppBarNav() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            React SpringBoot Todo App
+            <h1 style={{ fontSize: '22px'}}>React SpringBoot Todo App</h1>
           </Typography>
         </Toolbar>
       </AppBar>
