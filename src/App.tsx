@@ -1,6 +1,6 @@
 import './App.css';
-import AppBarNav from "./components/AppBarNav.js"
-import Task from "./components/Task.js"
+import AppBarNav from "./components/AppBarNav"
+import Task from "./components/Task"
 
 function App() {
   return (
