@@ -4,10 +4,11 @@ import TextField from '@mui/material/TextField';
 import { Container, Paper } from '@mui/material';
 
 export default function Task() {
-    const paperStyle = {padding: "30px 20px", marginTop: "50px"}
+    const paperStyle = {padding: "30px 20px", maxWidth: 600, margin: "50px auto", }
     return (
         <Container>
             <Paper elevation={3} style={paperStyle}>
+                <h1 style={{color: "#1976d2"}}>Add Task</h1>
             <Box
                 component="form"
                 sx={{
