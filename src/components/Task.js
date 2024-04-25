@@ -17,7 +17,7 @@ export default function Task() {
                 autoComplete="off"
             >
                 <TextField id="outlined-basic" label="Task Name" variant="outlined" />
-                <TextField id="outlined-basic" label="Task URL" variant="outlined" />
+                <TextField id="outlined-basic2" label="Task URL" variant="outlined" />
             </Box>
             </Paper>
         </Container>
