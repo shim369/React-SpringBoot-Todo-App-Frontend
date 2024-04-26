@@ -5,13 +5,12 @@ import { Container, Paper, Button, Link } from '@mui/material';
 import { Todo } from "../../types/todo"
 import { red } from '@mui/material/colors';
 
-const buttonColor = red[600];
-
 export default function Task() {
     const paperStyle = { padding: "30px 20px", maxWidth: 600, margin: "50px auto", }
     const [title, setTitle] = useState('')
     const [url, setUrl] = useState('')
     const [tasks, setTasks] = useState<Todo[]>([])
+    const buttonColor = red[600]
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
