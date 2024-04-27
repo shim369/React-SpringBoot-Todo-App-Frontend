@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { Link as RouterLink } from 'react-router-dom';
 import { Container, Paper, Button, Link } from '@mui/material';
 import { Todo } from "../../types/todo"
 import { red } from '@mui/material/colors';
@@ -86,7 +87,10 @@ export default function Task() {
                 {tasks.map((task,index) => (
                     <Paper elevation={3} style={{margin:"10px",padding:"15px",textAlign:"left", display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} key={index}>
                         <div>{task.id} <Link href={task.url} target="_blank">{task.title}</Link></div>
-                        <Button variant="contained" onClick={() => handleDelete(task.id)}>Delete</Button>
+                        <div>
+<Button component={RouterLink} to={`/tasks/${task.id}/edit`} variant="contained" style={{ marginRight: "10px" }}>Edit</Button>
+                            <Button variant="contained" onClick={() => handleDelete(task.id)}>Delete</Button>
+                        </div>
                     </Paper>
                 ))}
             </Paper>

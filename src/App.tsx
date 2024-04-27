@@ -1,12 +1,12 @@
 import './App.css';
 import AppBarNav from "./components/AppBarNav"
-import Task from "./components/Task"
+import MyRouter from './router/index'
 
 function App() {
   return (
     <div className="App">
       <AppBarNav />
-      <Task />
+      <MyRouter />
     </div>
   );
 }
